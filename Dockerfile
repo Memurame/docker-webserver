@@ -19,6 +19,7 @@ RUN apt-get update && apt-get --allow-unauthenticated install -y \
   php7.3-mbstring \
   php7.3-mysql \
   php7.3-xml \
+  php7.3-zip \
   && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite headers
