@@ -27,6 +27,7 @@ RUN a2ensite default-ssl && a2enmod ssl
 
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
 COPY php.ini /etc/php/7.3/apache2/php.ini
+COPY lite_php_browscap.ini /etc/php/7.3/apache2/browscap.ini
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
