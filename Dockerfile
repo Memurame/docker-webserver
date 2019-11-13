@@ -22,6 +22,7 @@ RUN apt-get update && apt-get --allow-unauthenticated install -y \
   php7.3-zip \
   php7.3-intl \
   php7.3-pdo \
+  php7.3-apcu \
   && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite headers
@@ -38,5 +39,3 @@ RUN chmod +x /usr/local/bin/composer
 EXPOSE 80 443
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-
-
