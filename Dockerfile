@@ -11,26 +11,26 @@ RUN apt-get update && apt-get --allow-unauthenticated install -y \
   apache2 \
   zip \
   unzip \
-  php7.3 \
-  php7.3-cli \
-  php7.3-gd \
-  php7.3-common \
-  php7.3-curl \
-  php7.3-mbstring \
-  php7.3-mysql \
-  php7.3-xml \
-  php7.3-zip \
-  php7.3-intl \
-  php7.3-pdo \
-  php7.3-apcu \
+  php7.1 \
+  php7.1-cli \
+  php7.1-gd \
+  php7.1-common \
+  php7.1-curl \
+  php7.1-mbstring \
+  php7.1-mysql \
+  php7.1-xml \
+  php7.1-zip \
+  php7.1-intl \
+  php7.1-pdo \
+  php7.1-apcu \
   && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite headers
 RUN a2ensite default-ssl && a2enmod ssl
 
 COPY 000-default.conf /etc/apache2/sites-enabled/000-default.conf
-COPY php.ini /etc/php/7.3/apache2/php.ini
-COPY lite_php_browscap.ini /etc/php/7.3/apache2/browscap.ini
+COPY php.ini /etc/php/7.1/apache2/php.ini
+COPY lite_php_browscap.ini /etc/php/7.1/apache2/browscap.ini
 
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
